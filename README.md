@@ -1,9 +1,12 @@
 # butter
 
-A new Flutter project.
+A new Flutter project to vote on images.
 
-## Getting Started
+Watch this space for more updates.
+
+### Credits
 
 For help getting started with Flutter, view our online
 [documentation](http://flutter.io/).
-# butter
+
+nissim@tengio.com
