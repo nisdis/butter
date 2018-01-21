@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new butterApp());
 
-class butterApp extends StatelessWidget {
+
+class ButterApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Butter Images',
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -17,9 +17,77 @@ class butterApp extends StatelessWidget {
         // "hot reload" (press "r" in the console where you ran "flutter run",
         // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
         // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.orange,
       ),
-      home: new MyHomePage(title: 'Butter'),
+      home: new DefaultTabController(
+                 length: choices.length,
+                 child: new Scaffold(
+                   appBar: new AppBar(
+                     leading: new IconButton(
+                       icon: new Icon(Icons.menu),
+                       tooltip: 'Navigation menu',
+                       onPressed: null,
+                     ),
+                     title: const Text('Butter App'),
+                     bottom: new TabBar(
+                       isScrollable: true,
+                       tabs: choices.map((Choice choice) {
+                         return new Tab(
+                           text: choice.title,
+                           icon: new Icon(choice.icon),
+                         );
+                       }).toList(),
+                     ),
+                   ),
+                   body: new TabBarView(
+                     children: choices.map((Choice choice) {
+                       return new Padding(
+                         padding: const EdgeInsets.all(16.0),
+                         child: new ChoiceCard(choice: choice),
+                       );
+                     }).toList(),
+                   ),
+                 ),
+               ),
+    );
+  }
+}
+
+class Choice {
+  const Choice({ this.title, this.icon });
+  final String title;
+  final IconData icon;
+}
+
+const List<Choice> choices = const <Choice>[
+  const Choice(title: 'CAR', icon: Icons.directions_car),
+  const Choice(title: 'BICYCLE', icon: Icons.directions_bike),
+  const Choice(title: 'BOAT', icon: Icons.directions_boat),
+  const Choice(title: 'BUS', icon: Icons.directions_bus),
+  const Choice(title: 'TRAIN', icon: Icons.directions_railway),
+  const Choice(title: 'WALK', icon: Icons.directions_walk),
+];
+
+class ChoiceCard extends StatelessWidget {
+  const ChoiceCard({ Key key, this.choice }) : super(key: key);
+
+  final Choice choice;
+
+  @override
+  Widget build(BuildContext context) {
+    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    return new Card(
+      color: Colors.white,
+      child: new Center(
+        child: new Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new Icon(choice.icon, size: 128.0, color: textStyle.color),
+            new Text(choice.title, style: textStyle),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -66,6 +134,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return new Scaffold(
       appBar: new AppBar(
+        leading: new IconButton(
+          icon: new Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: new Text(widget.title),
@@ -107,3 +180,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
+void main() => runApp(new ButterApp());
