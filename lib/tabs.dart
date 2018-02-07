@@ -106,7 +106,7 @@ class MyTabsState extends State<MyTabs> with SingleTickerProviderStateMixin {
           controller: controller,
           tabs: <Tab>[
             new Tab(icon: new Icon(Icons.camera_alt)),
-            new Tab(icon: new Icon(Icons.videocam)),
+            new Tab(icon: new Icon(Icons.movie)),
             new Tab(icon: new Icon(Icons.mic)),
           ]
         )

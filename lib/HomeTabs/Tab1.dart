@@ -25,7 +25,7 @@ class ImagetabState extends State<Imagetab> {
           child: new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-                new Text(widget.title, style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold)),
+                new Text(widget.title, style: new TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold, height: 2.0,)),
                 new FloatingActionButton(
                         onPressed: () {
                           setState(() {
@@ -34,6 +34,7 @@ class ImagetabState extends State<Imagetab> {
                         },
                         tooltip: 'Pick Image',
                         child: new Icon(Icons.add_a_photo),
+
                       ),
                 new FutureBuilder<File>(
                     future: _imageFile,
@@ -43,25 +44,23 @@ class ImagetabState extends State<Imagetab> {
                         _imgTmp = new Image.file(snapshot.data, fit: BoxFit.contain,);
                         return new Container(
                             child: _imgTmp,
-                            margin: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+                            margin: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 5.0),
                             //color: const Color(0xFF00FF00),
-                            width: 300.0,
-                            height: 300.0,
+                            width: 350.0,
+                            height: 350.0,
                         );
 
 
-
-                        // new Column(
-                        //         mainAxisAlignment: MainAxisAlignment.center,
-                        //         mainAxisSize: MainAxisSize.min ,
-                        //         children: <Widget>[
-                        //            new Image.file(snapshot.data, fit: BoxFit.contain,)
-                        //         ],
-                        //   );
-
                       } else {
 
-                          return new Image.asset('assets/6.jpg', fit: BoxFit.fitWidth , scale: 0.8);
+                          _imgTmp = new Image.asset('assets/6.jpg', fit: BoxFit.fitWidth , scale: 0.8);
+                          return new Container(
+                              child: _imgTmp,
+                            margin: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 5.0),
+                              //color: const Color(0xFF00FF00),
+                              width: 350.0,
+                              height: 350.0,
+                          );
 
                       }
                     }),
