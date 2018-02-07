@@ -1,0 +1,40 @@
+PODS:
+  - Flutter (1.0.0)
+  - image_picker (0.0.1):
+    - Flutter
+  - medcorder_audio (0.0.1):
+    - Flutter
+  - path_provider (0.0.1):
+    - Flutter
+  - video_launcher (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `/Users/nisdis/WorkGit/flutter/bin/cache/artifacts/engine/ios`)
+  - image_picker (from `/Users/nisdis/.pub-cache/hosted/pub.dartlang.org/image_picker-0.2.1/ios`)
+  - medcorder_audio (from `/Users/nisdis/.pub-cache/hosted/pub.dartlang.org/medcorder_audio-0.0.1/ios`)
+  - path_provider (from `/Users/nisdis/.pub-cache/hosted/pub.dartlang.org/path_provider-0.3.1/ios`)
+  - video_launcher (from `/Users/nisdis/.pub-cache/hosted/pub.dartlang.org/video_launcher-0.3.0/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: /Users/nisdis/WorkGit/flutter/bin/cache/artifacts/engine/ios
+  image_picker:
+    :path: /Users/nisdis/.pub-cache/hosted/pub.dartlang.org/image_picker-0.2.1/ios
+  medcorder_audio:
+    :path: /Users/nisdis/.pub-cache/hosted/pub.dartlang.org/medcorder_audio-0.0.1/ios
+  path_provider:
+    :path: /Users/nisdis/.pub-cache/hosted/pub.dartlang.org/path_provider-0.3.1/ios
+  video_launcher:
+    :path: /Users/nisdis/.pub-cache/hosted/pub.dartlang.org/video_launcher-0.3.0/ios
+
+SPEC CHECKSUMS:
+  Flutter: 7eb41cd1fd524b90d7f22bceb20da2c39338b089
+  image_picker: ee00aab0487cedc80a304085219503cc6d0f2e22
+  medcorder_audio: dade52fe96a94b6b7ff3d2cc914da6bd3b5f6ceb
+  path_provider: 09407919825bfe3c2deae39453b7a5b44f467873
+  video_launcher: c3887fc9715dd67390aa250adafb0a0921b8c039
+
+PODFILE CHECKSUM: 351e02e34b831289961ec3558a535cbd2c4965d2
+
+COCOAPODS: 1.4.0
